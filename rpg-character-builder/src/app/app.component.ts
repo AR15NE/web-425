@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 // Defines the root component of the application
 @Component({
   selector: 'app-root', // The selector for this component, used in index.html
-  standalone: true, // Indicates that this is a standalone component
+  standalone: true, 
   imports: [RouterOutlet], // Imports RouterOutlet for navigation between routes
   templateUrl: './app.component.html', // Specifies the HTML template for this component
   styleUrls: ['./app.component.css'] // Specifies the CSS stylesheet for this component

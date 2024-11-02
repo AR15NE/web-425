@@ -26,6 +26,11 @@ nav ul {
   padding: 0;
   background-color: #2B0101;
   margin: 0;
+  position: relative;
+}
+
+nav ul li {
+  position: relative;
 }
 
 nav ul li a {
@@ -37,6 +42,37 @@ nav ul li a {
   background-color: #DAA520;
   border-radius: 10px;
   margin: 0 5px;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2B0101;
+  padding: 10px 0; /* Add padding to the dropdown container */
+  list-style: none;
+  margin: 0;
+  border: 2px solid gold;
+  border-radius: 10px;
+  min-width: 200px; /* Set a minimum width for the dropdown */
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li {
+  margin: 0;
+}
+
+nav ul li ul li a {
+  padding: 10px 20px; /* Increase padding for more space */
+  border: none;
+  background-color: #DAA520;
+  border-radius: 0;
+  white-space: nowrap; /* Prevent text from wrapping */
+  line-height: 1.8; /* Increase line height for better vertical spacing */
 }
 
 main {
@@ -63,4 +99,36 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+/* still trying to figure out how to get the footer drop down to drop 'up' */
+footer nav ul li {
+  position: relative;
+}
+
+footer nav ul li ul {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: #2B0101;
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+  border: 2px solid gold;
+  border-radius: 10px;
+  min-width: 200px;
+}
+
+footer nav ul li:hover > ul {
+  display: block;
+}
+
+footer nav ul li ul li a {
+  padding: 10px 20px;
+  border: none;
+  background-color: #DAA520;
+  border-radius: 0;
+  white-space: nowrap;
+  line-height: 1.8;
 }
