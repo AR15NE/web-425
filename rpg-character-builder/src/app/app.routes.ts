@@ -8,15 +8,18 @@ import { CharacterFactionComponent } from './character-faction/character-faction
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
-// Define the routes for the application
 export const routes: Routes = [
-  { path: '', component: HomeComponent }, // Default route, redirects to HomeComponent
-  { path: 'home', component: HomeComponent }, // Route for the Home page
-  { path: 'players', component: PlayersComponent }, // Route for the Players page
-  { path: 'signin', component: SigninComponent }, // Route for the Sign In page
-  { path: 'create-character', component: CreateCharacterComponent }, // Route for the Create Character page
-  { path: 'create-guild', component: CreateGuildComponent }, // Route for the Create Guild page
-  { path: 'character-faction', component: CharacterFactionComponent }, // Route for the Character Faction page
-  { path: 'about', component: AboutComponent }, // Route for the About page
-  { path: 'gallery', component: GalleryComponent } // Route for the Gallery page
+  { path: '', component: HomeComponent },
+  { path: 'players', component: PlayersComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'create-character', component: CreateCharacterComponent },
+  { path: 'create-guild', component: CreateGuildComponent },
+  { path: 'character-faction', component: CharacterFactionComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'gallery', component: GalleryComponent },
 ];
+
+
+
+
+

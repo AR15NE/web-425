@@ -1,0 +1,10 @@
+<div class="character-list">
+  <div class="character-item" *ngFor="let character of characters">
+    <h2>{{ character.name }}</h2>
+    <p>Gender: {{ character.gender }}</p>
+    <p>Class: {{ character.class }}</p>
+    <p>Faction: {{ character.faction }}</p>
+    <p>Starting Location: {{ character.startingLocation }}</p>
+    <p>Fun Fact: {{ character.funFact }}</p>
+  </div>
+</div>

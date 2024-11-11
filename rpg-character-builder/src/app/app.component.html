@@ -12,7 +12,7 @@
       <a href="#">Guilds</a>
       <ul>
         <li><a routerLink="/create-guild">Create Guild</a></li>
-        <li><a routerLink="/players">Players</a></li>
+        <li><a routerLink="/players" class="player-tab" (click)="onPlayerTabClick()">Players</a></li> <!-- Added class and click event -->
       </ul>
     </li>
     <li>
@@ -30,6 +30,7 @@
   </ul>
 </nav>
 <main>
+  <h1>{{ title }}</h1>
   <router-outlet></router-outlet>
 </main>
 <footer>
@@ -47,7 +48,7 @@
         <a href="#">Guilds</a>
         <ul>
           <li><a routerLink="/create-guild">Create Guild</a></li>
-          <li><a routerLink="/players">Players</a></li>
+          <li><a routerLink="/players" class="player-tab" (click)="onPlayerTabClick()">Players</a></li> <!-- Added class and click event -->
         </ul>
       </li>
       <li>
@@ -65,6 +66,10 @@
     </ul>
   </nav>
 </footer>
+
+
+
+
 
 
 

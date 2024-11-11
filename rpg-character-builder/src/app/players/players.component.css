@@ -1,0 +1,35 @@
+:host {
+  color: white;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Center the items and add space around them */
+}
+
+.character-item {
+  flex: 1 1 30%;
+  border: 2px solid gold; /* Gold border */
+  margin: 10px;
+  padding: 20px; /* Increase padding for better spacing */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for better contrast */
+  background-color: #2B0101; /* Dark background to match the theme */
+  color: white;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.character-item:hover {
+  transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.character-item h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.character-item p {
+  margin: 5px 0;
+}
+

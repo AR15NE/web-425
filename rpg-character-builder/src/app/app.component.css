@@ -42,6 +42,8 @@ nav ul li a {
   background-color: #DAA520;
   border-radius: 10px;
   margin: 0 5px;
+  cursor: pointer; /* Add this line */
+  pointer-events: auto; /* Ensure this is set */
 }
 
 nav ul li ul {
@@ -73,6 +75,14 @@ nav ul li ul li a {
   border-radius: 0;
   white-space: nowrap; /* Prevent text from wrapping */
   line-height: 1.8; /* Increase line height for better vertical spacing */
+  cursor: pointer; /* Add this line */
+  pointer-events: auto; /* Ensure this is set */
+}
+
+.player-tab {
+  pointer-events: auto;
+  z-index: 10;
+  cursor: pointer; /* Add this line */
 }
 
 main {
@@ -131,4 +141,6 @@ footer nav ul li ul li a {
   border-radius: 0;
   white-space: nowrap;
   line-height: 1.8;
+  cursor: pointer; 
+  pointer-events: auto;
 }
