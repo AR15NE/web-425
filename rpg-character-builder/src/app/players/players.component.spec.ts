@@ -9,7 +9,7 @@ describe('PlayersComponent', () => {
   beforeEach(async () => {
     // Set up the testing module for the PlayersComponent
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, PlayersComponent] // Import PlayersComponent here
+      imports: [RouterTestingModule, PlayersComponent]
     }).compileComponents();
 
     // Create the component and test fixture

@@ -10,6 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent }, //adding missing route to correct home button routing
   { path: 'players', component: PlayersComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'create-character', component: CreateCharacterComponent },
