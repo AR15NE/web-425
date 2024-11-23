@@ -1,0 +1,56 @@
+/* Center the sign-in box on the page */
+.signin-form-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+}
+
+/* Style the sign-in form */
+.signin-form {
+  background-color: #2B0101; /* Dark background color for DnD style */
+  border: 2px solid #DAA520; /* Gold border */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slight shadow for a cool effect */
+  width: 90%; /* Reduced width to make it more compact */
+  max-width: 350px; /* Reduced maximum width for the form */
+}
+
+/* Style labels and inputs */
+label, input {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black; /* Ensure text color is black */
+  background-color: white; /* White background for input fields */
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  background-color: #DAA520; /* Gold background for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #b8860b; /* Darker gold on hover */
+}
+
+/* Style error messages */
+.error {
+  color: red;
+  padding: 5px;
+}
+
+

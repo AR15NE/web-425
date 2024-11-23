@@ -12,13 +12,16 @@
       <a href="#">Guilds</a>
       <ul>
         <li><a routerLink="/create-guild">Create Guild</a></li>
-        <li><a routerLink="/players" class="player-tab" (click)="onPlayerTabClick()">Players</a></li> <!-- Added class and click event -->
+        <li><a routerLink="/players" class="player-tab" (click)="onPlayerTabClick()">Players</a></li>
       </ul>
     </li>
     <li>
       <a href="#">User</a>
       <ul>
-        <li><a routerLink="/signin">Sign In</a></li>
+        <li *ngIf="!email"><a routerLink="/signin" style="color: white;">Sign In</a></li>
+        <li *ngIf="email" style="color: white;">Welcome, {{ email }}!
+          <button (click)="signout()" style="color: white; background-color: #DAA520; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.4s;">Sign Out</button>
+        </li>
       </ul>
     </li>
     <li>
@@ -48,13 +51,16 @@
         <a href="#">Guilds</a>
         <ul>
           <li><a routerLink="/create-guild">Create Guild</a></li>
-          <li><a routerLink="/players" class="player-tab" (click)="onPlayerTabClick()">Players</a></li> <!-- Added class and click event -->
+          <li><a routerLink="/players" class="player-tab" (click)="onPlayerTabClick()">Players</a></li>
         </ul>
       </li>
       <li>
         <a href="#">User</a>
         <ul>
-          <li><a routerLink="/signin">Sign In</a></li>
+          <li *ngIf="!email"><a routerLink="/signin" style="color: white;">Sign In</a></li>
+          <li *ngIf="email" style="color: white;">Welcome, {{ email }}!
+            <button (click)="signout()" style="color: white; background-color: #DAA520; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.4s;">Sign Out</button>
+          </li>
         </ul>
       </li>
       <li>
@@ -66,6 +72,10 @@
     </ul>
   </nav>
 </footer>
+
+
+
+
 
 
 

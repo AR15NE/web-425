@@ -1,0 +1,23 @@
+<div class="signin-form-container">
+  <form [formGroup]="signinForm" (ngSubmit)="signin()" class="signin-form">
+    <fieldset>
+      <legend style="color: white;">User Sign In</legend>
+      <label for="email">Email</label>
+      <input formControlName="email" type="email" id="email" name="email">
+      <div *ngIf="signinForm.controls['email'].touched && signinForm.controls['email'].invalid">
+        <small *ngIf="signinForm.controls['email'].hasError('required')" class="error">Email is required.</small>
+        <small *ngIf="signinForm.controls['email'].hasError('email')" class="error">Invalid email address.</small>
+      </div>
+
+      <label for="password">Password</label>
+      <input formControlName="password" id="password" type="password">
+      <div *ngIf="signinForm.controls['password'].touched && signinForm.controls['password'].invalid">
+        <small *ngIf="signinForm.controls['password'].hasError('required')" class="error">Password is required.</small>
+        <small *ngIf="signinForm.controls['password'].hasError('pattern')" class="error">Password must be at least 8 characters long and contain at least one uppercase letter and one number.</small>
+      </div>
+
+      <input type="submit" [disabled]="!signinForm.valid" value="Sign In">
+    </fieldset>
+  </form>
+</div>
+
