@@ -1,4 +1,4 @@
-import { AuthGuard } from './auth.guard'; // Correct import
+import { AuthGuard } from './auth.guard'; 
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from './auth.service';
@@ -27,6 +27,5 @@ describe('AuthGuard', () => {
     expect(authGuard).toBeTruthy();
   });
 
-  // Add more tests here as needed
 });
 

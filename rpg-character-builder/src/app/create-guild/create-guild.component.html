@@ -1,0 +1,81 @@
+<div class="create-guild">
+  <form [formGroup]="guildForm" (ngSubmit)="onSubmit()" class="guild-form" novalidate>
+    <!-- Guild Name Field -->
+    <label for="guildName">Guild Name:</label>
+    <!-- Input field with formControlName binding to 'guildName' -->
+    <input id="guildName" formControlName="guildName" type="text"
+           [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['guildName'].invalid}">
+    <!-- Error message for guildName field -->
+    <div *ngIf="isSubmitted && guildForm.controls['guildName'].errors" class="error">
+      Guild Name is required.
+    </div>
+
+    <!-- Description Field -->
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"
+              [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['description'].invalid}"></textarea>
+    <!-- Error message for description field -->
+    <div *ngIf="isSubmitted && guildForm.controls['description'].errors" class="error">
+      Description is required.
+    </div>
+
+    <!-- Type Field -->
+    <label for="type">Type:</label>
+    <select id="type" formControlName="type"
+            [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['type'].invalid}">
+      <option value="">Select Type</option>
+      <option value="Competitive">Competitive</option>
+      <option value="Casual">Casual</option>
+      <option value="Social">Social</option>
+      <option value="Educational">Educational</option>
+    </select>
+    <!-- Error message for type field -->
+    <div *ngIf="isSubmitted && guildForm.controls['type'].errors" class="error">
+      Type is required.
+    </div>
+
+    <!-- Accept Terms Checkbox -->
+    <label>
+      <input type="checkbox" formControlName="acceptTerms"
+             [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['acceptTerms'].invalid}"> Accept Terms
+    </label>
+    <!-- Error message for acceptTerms checkbox -->
+    <div *ngIf="isSubmitted && guildForm.controls['acceptTerms'].errors" class="error">
+      You must accept the terms.
+    </div>
+
+    <div>
+      Notification Preference:
+      <label><input type="radio" formControlName="notificationPreference" value="Email"
+                    [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['notificationPreference'].invalid}"> Email</label>
+      <label><input type="radio" formControlName="notificationPreference" value="SMS"
+                    [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['notificationPreference'].invalid}"> SMS</label>
+      <label><input type="radio" formControlName="notificationPreference" value="In-App"
+                    [ngClass]="{'is-invalid': isSubmitted && guildForm.controls['notificationPreference'].invalid}"> In-App</label>
+    </div>
+    <!-- Error message for notificationPreference -->
+    <div *ngIf="isSubmitted && guildForm.controls['notificationPreference'].errors" class="error">
+      Notification Preference is required.
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Create Guild</button>
+  </form>
+
+  <!-- Display Created Guilds -->
+  <div class="created-guilds" *ngIf="guilds.length > 0">
+    <h2>Created Guilds</h2>
+    <ul>
+      <!-- Loop through the list of created guilds and display each -->
+      <li *ngFor="let guild of guilds">
+        <h3>{{ guild.guildName }}</h3>
+        <p><strong>Description:</strong> {{ guild.description }}</p>
+        <p><strong>Type:</strong> {{ guild.type }}</p>
+        <p><strong>Notification Preference:</strong> {{ guild.notificationPreference }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
