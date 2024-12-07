@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { GuildListComponent } from '../guild-list/guild-list.component'; // Ensure this import
 
 @Component({
   selector: 'app-create-guild',
@@ -8,12 +9,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./create-guild.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule]
+  imports: [ReactiveFormsModule, CommonModule, GuildListComponent] // Ensure GuildListComponent here
 })
 export class CreateGuildComponent {
   guildForm: FormGroup;
   guilds: Array<any> = [];
-  isSubmitted = false; // Flag to track form submission
+  @Output() guildCreated = new EventEmitter<any>();
+  isSubmitted = false;
 
   constructor(private fb: FormBuilder) {
     this.guildForm = this.fb.group({
@@ -26,14 +28,18 @@ export class CreateGuildComponent {
   }
 
   onSubmit() {
-    this.isSubmitted = true; // Mark the form as submitted
+    this.isSubmitted = true;
     if (this.guildForm.valid) {
       this.guilds.push(this.guildForm.value);
+      this.guildCreated.emit(this.guildForm.value);
       this.guildForm.reset();
-      this.isSubmitted = false; // Reset the submission flag
+      this.isSubmitted = false;
     }
   }
 }
+
+
+
 
 
 

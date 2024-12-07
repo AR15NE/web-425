@@ -7,19 +7,26 @@
 
 .is-invalid {
   border-color: red;
-  background-color: #fdd; 
+  background-color: #fdd;
 }
 
 /* Basic form and input styling */
 .create-guild .guild-form {
   width: 100%;
   margin-bottom: 20px;
+  background-color: #2B0101;
+  padding: 20px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  max-width: 500px; /* Set a max-width for the form */
+  margin: 0 auto; /* Center the form */
 }
 
 .create-guild .guild-form label {
   display: block;
   margin-bottom: 5px;
   color: white;
+  font-family: 'MedievalSharp', cursive;
 }
 
 .create-guild .guild-form input,
@@ -31,8 +38,9 @@
   box-sizing: border-box;
   border: 2px solid #DAA520;
   border-radius: 5px;
-  background-color: black;
-  color: white;
+  background-color: #DAA520;
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 .create-guild .guild-form input[type="checkbox"],
@@ -53,6 +61,8 @@
   font-size: 16px;
   font-family: 'MedievalSharp', cursive;
   transition-duration: 0.4s;
+  display: block;
+  width: 100%; /* Make button full width */
 }
 
 .create-guild .guild-form button:hover {
@@ -64,8 +74,8 @@
 /* Created guilds display section */
 .create-guild .created-guilds {
   width: 100%;
-  background-color: black;
-  border: 2px solid #DAA520;
+  background-color: #2B0101;
+  border: 2px solid gold;
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -86,6 +96,7 @@
 .create-guild .created-guilds ul li:last-of-type {
   border-bottom: none;
 }
+
 
 
 
