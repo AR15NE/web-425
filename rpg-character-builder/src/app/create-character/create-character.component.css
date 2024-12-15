@@ -1,21 +1,18 @@
-.page-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.page-header h1 {
-  color: white;
-  font-family: 'MedievalSharp', cursive;
+/* Error styling */
+.error {
+  color: red;
+  margin-top: -10px;
   margin-bottom: 10px;
 }
 
-.page-header p {
-  color: #DAA520;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
+.is-invalid {
+  border-color: red;
+  background-color: #fdd;
 }
 
-form {
+/* Basic form and input styling */
+.guild-form {
+  width: 100%;
   margin-bottom: 20px;
   background-color: #2B0101;
   padding: 20px;
@@ -25,70 +22,81 @@ form {
   margin: 0 auto; /* Center the form */
 }
 
-form div {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ensure space between label and input */
-}
-
-label {
+.guild-form label {
+  display: block;
+  margin-bottom: 5px;
   color: white;
   font-family: 'MedievalSharp', cursive;
-  margin-right: 10px;
-  flex: 1; /* Allow label to take up space */
 }
 
-input, select {
-  padding: 5px;
-  border: 2px solid gold;
+.guild-form input,
+.guild-form textarea,
+.guild-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 2px solid #DAA520;
   border-radius: 5px;
   background-color: #DAA520;
   color: black;
   font-family: 'Roboto', sans-serif;
-  flex: 2; 
 }
 
-button {
-  margin-top: 10px;
+.guild-form input[type="checkbox"],
+.guild-form input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.guild-form button {
   padding: 10px 20px;
-  border: 2px solid gold;
-  border-radius: 10px;
+  margin: 20px 0;
   background-color: #DAA520;
   color: black;
-  font-family: 'MedievalSharp', cursive;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-family: 'MedievalSharp', cursive;
+  transition-duration: 0.4s;
   display: block;
   width: 100%; /* Make button full width */
 }
 
-h2 {
+.guild-form button:hover {
+  background-color: red;
   color: white;
-  font-family: 'MedievalSharp', cursive;
+  border: 2px solid #DAA520;
 }
 
-.character-profiles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.character-profile {
+/* Created characters display section */
+.created-guilds {
+  width: 100%;
   background-color: #2B0101;
   border: 2px solid gold;
   border-radius: 10px;
   padding: 20px;
-  width: 200px;
+  margin-top: 20px;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  max-width: 500px;
+  margin: 0 auto; 
 }
 
-.character-profile h3 {
-  font-family: 'MedievalSharp', cursive;
-  margin-top: 0;
+/* Character card styling */
+.created-guilds ul {
+  list-style: none;
+  padding: 0;
 }
 
-.character-profile p {
-  margin: 5px 0;
+.created-guilds ul li {
+  padding: 10px;
+  border-bottom: 1px solid #DAA520;
+  color: white;
+}
+
+.created-guilds ul li:last-of-type {
+  border-bottom: none;
+  color: white;
 }

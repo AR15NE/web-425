@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+#character-faction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*centers the table */
+  padding: 0;
+}
+
+table {
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  border-collapse: collapse; /*removes gap*/
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid gold;
+  text-align: left;
+}
+
+thead {
+  background-color: #daa520;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #2B0101;
+  color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #4b0101;
+  color: white;
+}
+
+#character-faction-no-data {
+  padding: 20px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  background-color: #2B0101;
+  color: white;
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+}

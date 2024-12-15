@@ -9,8 +9,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class CharacterListComponent {
-  @Input() characters: any[] = [];
+  @Input() characters: Character[] = []; // Ensure Input decorator
 }
 
-
-
+interface Character {
+  id: number;
+  name: string;
+  gender: string;
+  class: string;
+}

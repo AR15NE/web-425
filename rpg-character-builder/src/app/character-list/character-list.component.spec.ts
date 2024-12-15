@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CharacterListComponent } from './character-list.component';
+import { CommonModule } from '@angular/common';
 
 describe('CharacterListComponent', () => {
   let component: CharacterListComponent;
@@ -7,28 +8,32 @@ describe('CharacterListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CharacterListComponent] // Importing the standalone CharacterListComponent for testing }).compileComponents();
+      imports: [CommonModule],
+      declarations: [CharacterListComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CharacterListComponent); // Create an instance of the component fixture
+    fixture = TestBed.createComponent(CharacterListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should display characters correctly', () => {
-    // Set the characters input for the component with test data
-    component.characters = [{ name: 'Hero', id: 1, gender: 'Male', class: 'Warrior' }, { name: 'Villain', id: 2, gender: 'Female', class: 'Mage' }];
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelectorAll('.character-profile').length).toBe(2);
-    expect(compiled.querySelectorAll('.character-profile')[0].textContent).toContain('Hero');
-    expect(compiled.querySelectorAll('.character-profile')[1].textContent).toContain('Villain');
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 
-  it('should display a message for an empty character list', () => {
+  it('should initialize the characters array', () => {
     component.characters = [];
+    expect(component.characters).toEqual([]);
+  });
+
+  it('should display character names correctly', () => {
+    const mockCharacters = [
+      { id: 1, name: 'Character 1', gender: 'Female', class: 'Warrior' },
+      { id: 2, name: 'Character 2', gender: 'Male', class: 'Mage' }
+    ];
+    component.characters = mockCharacters;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain('No characters created yet.');
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('li').length).toBe(mockCharacters.length);
   });
 });

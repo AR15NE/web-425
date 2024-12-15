@@ -1,30 +1,24 @@
-<div class="page-header">
-  <h1>Create Your RPG Character</h1>
-  <p>Unleash your creativity and craft unique characters for your adventures!</p>
-</div>
-<form #characterForm="ngForm" (ngSubmit)="onSubmit(characterForm)">
-  <div>
+<div>
+  <h2>Create Character</h2>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="guild-form">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" ngModel required>
-  </div>
-  <div>
+
     <label for="gender">Gender:</label>
     <select id="gender" name="gender" ngModel required>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select>
-  </div>
-  <div>
+
     <label for="class">Class:</label>
     <select id="class" name="class" ngModel required>
       <option value="Warrior">Warrior</option>
       <option value="Mage">Mage</option>
       <option value="Rogue">Rogue</option>
     </select>
-  </div>
-  <button type="submit">Create Character</button>
-</form>
 
-<app-character-list [characters]="characters"></app-character-list>
-
+    <button type="submit">Create Character</button>
+  </form>
+  <app-character-list [characters]="characters"></app-character-list>
+</div>

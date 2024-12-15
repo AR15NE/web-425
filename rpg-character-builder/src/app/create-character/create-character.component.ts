@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CharacterListComponent } from '../character-list/character-list.component'; // Ensure this import
+import { CharacterListComponent } from '../character-list/character-list.component';
 
 @Component({
   selector: 'app-create-character',
   templateUrl: './create-character.component.html',
   styleUrls: ['./create-character.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, CharacterListComponent] // Ensure CharacterListComponent here
+  imports: [FormsModule, CommonModule, CharacterListComponent]
 })
 export class CreateCharacterComponent {
   characters: Character[] = [];
@@ -21,7 +21,9 @@ export class CreateCharacterComponent {
       gender: form.value.gender,
       class: form.value.class
     };
-    this.characters.push(newCharacter);
+    console.log('New Character:', newCharacter); // Debugging log
+    this.characters.push(newCharacter); // Update characters array
+    console.log('Characters Array:', this.characters); // Debugging log
     this.characterCreated.emit(newCharacter);
     this.resetForm(form);
   }
@@ -37,6 +39,3 @@ interface Character {
   gender: string;
   class: string;
 }
-
-
-
